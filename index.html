@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeux Anniversaire</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #f0f;
+            position: absolute;
+            animation: fall 3s linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #667eea;
+            font-size: 3em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: bounce 1s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .photo-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .photo {
+            max-width: 300px;
+            width: 100%;
+            border-radius: 15px;
+            border: 5px solid #667eea;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .photo:hover {
+            transform: scale(1.05);
+        }
+
+        .message {
+            text-align: center;
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #333;
+            margin: 30px 0;
+        }
+
+        .message p {
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .wishes {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 1.3em;
+            font-style: italic;
+        }
+
+        .balloons {
+            text-align: center;
+            font-size: 3em;
+            margin: 20px 0;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .signature {
+            text-align: right;
+            margin-top: 30px;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Joyeux Anniversaire Boss ! 🎉</h1>
+        
+        <div class="balloons">🎈🎊🎁🎂🎈</div>
+        
+        <div class="photo-container">
+            <img src="rony.jpg" style="width:120px;" alt="Photo de diplôme">
+        </div>
+        
+        <div class="message">
+            <p>En ce jour si spécial, je tiens à te dire combien tu es <span class="highlight">précieux</span> et <span class="highlight">important</span>.</p>
+            
+            <p>Ta réussite académique, symbolisée par cette belle photo de remise de diplôme, témoigne de ton <span class="highlight">courage</span>, de ta <span class="highlight">détermination</span> et de ton <span class="highlight">intelligence</span>.</p>
+            
+            <p>Chaque année qui passe te rend plus <span class="highlight">sage</span>, plus <span class="highlight">fort</span> et plus <span class="highlight">inspirant</span>. Tu es un modèle de persévérance et d'excellence.</p>
+            
+            <p>Que cette nouvelle année de ta vie soit remplie de <span class="highlight">joie</span>, de <span class="highlight">succès</span>, de <span class="highlight">santé</span> et de <span class="highlight">prospérité</span>.</p>
+            
+            <p>Que tous tes rêves se réalisent et que chaque jour t'apporte son lot de <span class="highlight">bonheur</span> et de <span class="highlight">bénédictions</span>.</p>
+        </div>
+        
+        <div class="wishes">
+            "Que Dieu te bénisse abondamment et t'accompagne dans tous tes projets. Tu mérites le meilleur que la vie puisse offrir. Joyeux anniversaire !"
+        </div>
+        
+        <div class="balloons">🎊🎉🎈🎁🎂</div>
+        
+        <div class="signature">
+            Avec tout mon amour et mes meilleurs vœux ❤️
+        </div>
+    </div>
+    
+    <script>
+        // Animation des confettis
+        function createConfetti() {
+            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f7b731', '#5f27cd', '#ee5a6f'];
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.animationDelay = Math.random() * 3 + 's';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => confetti.remove(), 3000);
+            }
+        }
+        
+        setInterval(createConfetti, 3000);
+        createConfetti();
+    </script>
+</body>
+</html>
