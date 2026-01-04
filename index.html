@@ -1,202 +1,587 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joyeux Anniversaire</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 800px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 1s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .confetti {
-            position: fixed;
-            width: 10px;
-            height: 10px;
-            background: #f0f;
-            position: absolute;
-            animation: fall 3s linear infinite;
-        }
-
-        @keyframes fall {
-            to {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        h1 {
-            text-align: center;
-            color: #667eea;
-            font-size: 3em;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            animation: bounce 1s ease infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .photo-container {
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .photo {
-            max-width: 300px;
-            width: 100%;
-            border-radius: 15px;
-            border: 5px solid #667eea;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .photo:hover {
-            transform: scale(1.05);
-        }
-
-        .message {
-            text-align: center;
-            font-size: 1.2em;
-            line-height: 1.8;
-            color: #333;
-            margin: 30px 0;
-        }
-
-        .message p {
-            margin-bottom: 20px;
-        }
-
-        .highlight {
-            color: #667eea;
-            font-weight: bold;
-        }
-
-        .wishes {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin-top: 30px;
-            text-align: center;
-            font-size: 1.3em;
-            font-style: italic;
-        }
-
-        .balloons {
-            text-align: center;
-            font-size: 3em;
-            margin: 20px 0;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        .signature {
-            text-align: right;
-            margin-top: 30px;
-            font-style: italic;
-            color: #666;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>🎉 Joyeux Anniversaire Boss ! 🎉</h1>
-        
-        <div class="balloons">🎈🎊🎁🎂🎈</div>
-        
-        <div class="photo-container">
-            <img src="rony.jpg" style="width:120px;" alt="Photo de diplôme">
-        </div>
-        
-        <div class="message">
-            <p>En ce jour si spécial, je tiens à te dire combien tu es <span class="highlight">précieux</span> et <span class="highlight">important</span>.</p>
-            
-            <p>Ta réussite académique, symbolisée par cette belle photo de remise de diplôme, témoigne de ton <span class="highlight">courage</span>, de ta <span class="highlight">détermination</span> et de ton <span class="highlight">intelligence</span>.</p>
-            
-            <p>Chaque année qui passe te rend plus <span class="highlight">sage</span>, plus <span class="highlight">fort</span> et plus <span class="highlight">inspirant</span>. Tu es un modèle de persévérance et d'excellence.</p>
-            
-            <p>Que cette nouvelle année de ta vie soit remplie de <span class="highlight">joie</span>, de <span class="highlight">succès</span>, de <span class="highlight">santé</span> et de <span class="highlight">prospérité</span>.</p>
-            
-            <p>Que tous tes rêves se réalisent et que chaque jour t'apporte son lot de <span class="highlight">bonheur</span> et de <span class="highlight">bénédictions</span>.</p>
-        </div>
-        
-        <div class="wishes">
-            "Que Dieu te bénisse abondamment et t'accompagne dans tous tes projets. Tu mérites le meilleur que la vie puisse offrir. Joyeux anniversaire !"
-        </div>
-        
-        <div class="balloons">🎊🎉🎈🎁🎂</div>
-        
-        <div class="signature">
-            Avec tout mon amour et mes meilleurs vœux ❤️
-        </div>
-    </div>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - MICRO HORIZON</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome pour icônes -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
     <script>
-        // Animation des confettis
-        function createConfetti() {
-            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f7b731', '#5f27cd', '#ee5a6f'];
-            for (let i = 0; i < 50; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.left = Math.random() * 100 + '%';
-                confetti.style.animationDelay = Math.random() * 3 + 's';
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                document.body.appendChild(confetti);
-                
-                setTimeout(() => confetti.remove(), 3000);
-            }
-        }
-        
-        setInterval(createConfetti, 3000);
-        createConfetti();
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "mh-blue": "#1E40AF",
+              "mh-light-blue": "#3B82F6",
+              "mh-green": "#10B981",
+              "mh-dark-green": "#059669",
+              "mh-gold": "#F59E0B",
+              "mh-dark-gold": "#D97706",
+            },
+          },
+        },
+      };
     </script>
-</body>
+    <style>
+      :root {
+        --primary-white: #ffffff;
+        --primary-blue: #1e40af;
+        --secondary-blue: #3b82f6;
+        --primary-green: #2e8b57;
+        --secondary-green: #059669;
+        --primary-gold: #f59e0b;
+        --secondary-gold: #d97706;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        color: #333;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .hero-bg {
+        background: linear-gradient(
+            rgba(30, 58, 138, 0.85),
+            rgba(46, 139, 87, 0.9)
+          ),
+          url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .text-gradient {
+        background: linear-gradient(90deg, #d4af37 0%, #f7ef8a 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .section-bg {
+        background-color: #f8fafc;
+      }
+
+      .card-hover:hover {
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-primary {
+        background-color: var(--primary-green);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 4px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: #1e6b47;
+        transform: translateY(-2px);
+      }
+
+      .btn-secondary {
+        background-color: var(--primary-blue);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 4px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .btn-secondary:hover {
+        background-color: #152c5b;
+        transform: translateY(-2px);
+      }
+
+      .gold-border {
+        border-color: var(--primary-gold);
+      }
+
+      .stat-card {
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue),
+          var(--primary-green)
+        );
+        color: white;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .footer-bg {
+        background-color: #0f172a;
+      }
+
+      .logo-img {
+        max-width: 120px;
+        max-height: 60px;
+        object-fit: contain;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header / Navigation -->
+    <header
+      class="sticky top-0 z-50 bg-white bg-white shadow-lg border-b gold-border"
+    >
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between gap-5 items-center"
+      >
+        <!-- Logo -->
+        <a href="contact.html">
+          <div class="flex items-center space-x-2 whitespace-nowrap">
+            <div
+              class="w-10 h-10 rounded-full bg-gradient-to-r from-green-600 to-blue-600 flex items-center justify-center"
+            >
+              <i class="fas fa-seedling text-white text-xl"></i>
+            </div>
+            <div>
+              <h1 class="text-xl font-bold text-blue-900">MICRO HORIZON</h1>
+              <p class="text-xs font-semibold text-green-700">
+                Graine de l'Espoir
+              </p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Menu Desktop -->
+        <nav class="hidden md:flex space-x-8 whitespace-nowrap">
+          <a
+            href="index.html"
+            class="text-green-600 font-medium border-b-2 border-green-600 pb-1"
+            >Accueil</a
+          >
+          <a
+            href="./apropos.html"
+            class="text-gray-600 font-medium hover:text-green-600 transition"
+            >À propos</a
+          >
+          <a
+            href="./nos-domaines.html"
+            class="text-gray-600 font-medium hover:text-green-600 transition"
+            >Nos domaines</a
+          >
+          <a
+            href="./nos-projets.html"
+            class="text-gray-600 font-medium hover:text-green-600 transition"
+            >Nos projets</a
+          >
+          <a
+            href="./centre-formation.html"
+            class="text-gray-600 font-medium hover:text-green-600 transition"
+            >Centre de formation</a
+          >
+          <a
+            href="./actualites.html"
+            class="text-gray-600 font-medium hover:text-green-600 transition"
+            >Actualités</a
+          >
+          <a
+            href="./partenaires.html"
+            class="text-gray-600 font-medium hover:text-green-600 transition"
+            >Partenaires</a
+          >
+          <a
+            href="#"
+            class="text-gray-600 font-medium hover:text-green-600 transition"
+            >Contact</a
+          >
+        </nav>
+
+        <!-- Menu Mobile Button -->
+        <button
+          id="menu-toggle"
+          class="md:hidden text-gray-700 text-xl hover:text-yellow-500 transition"
+        >
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white py-4 px-4 shadow-lg"
+      >
+        <div class="flex flex-col space-y-4">
+          <a
+            href="index.html"
+            class="text-green-600 font-medium border-l-4 border-green-600 pl-3"
+            >Accueil</a
+          >
+          <a
+            href="./apropos.html"
+            class="text-gray-600 font-medium hover:text-green-600 transition"
+            >À propos</a
+          >
+          <a
+            href="./nos-domaines.html"
+            class="text-gray-600 font-medium hover:text-green-600 transition"
+            >Nos domaines</a
+          >
+          <a
+            href="./nos-projets.html"
+            class="text-gray-600 font-medium hover:text-green-600 transition"
+            >Nos projets</a
+          >
+          <a
+            href="#"
+            class="text-gray-600 font-medium hover:text-green-600 transition"
+            >Centre de formation</a
+          >
+          <a
+            href="./actualites.html"
+            class="text-gray-600 font-medium hover:text-green-600 transition"
+            >Actualités</a
+          >
+          <a
+            href="./partenaires.html"
+            class="text-gray-600 font-medium hover:text-green-600 transition"
+            >Partenaires</a
+          >
+          <a
+            href="#"
+            class="text-gray-600 font-medium hover:text-green-600 transition"
+            >Contact</a
+          >
+          <a href="#" class="btn-primary inline-block text-center"
+            >Faire un don</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-16 md:py-24">
+      <div class="container mx-auto px-4">
+         <h1 class="text-4xl font-bold text-center mb-12">Contactez-nous</h1>
+         <p class="text-center text-xl max-w-3xl mx-auto">
+           Nous sommes à votre écoute pour toute question ou demande d'information
+         </p>
+      </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- Formulaire -->
+          <div class="bg-white p-8 rounded-2xl shadow-xl">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Envoyez-nous un message</h2>
+            <form id="contactForm">
+              <div class="mb-4">
+                <label class="block text-gray-700 mb-2">Nom complet</label>
+                <input type="text" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700 mb-2">Email</label>
+                <input type="email" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700 mb-2">Sujet</label>
+                <input type="text" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
+              </div>
+              <div class="mb-6">
+                <label class="block text-gray-700 mb-2">Message</label>
+                <textarea rows="5" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"></textarea>
+              </div>
+              <button type="submit" class="w-full bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 transition">
+                <i class="fas fa-paper-plane mr-2"></i> Envoyer
+              </button>
+            </form>
+          </div>
+
+          <!-- Infos & Carte -->
+          <div>
+            <div class="bg-white p-8 rounded-2xl shadow-xl mb-8">
+              <h2 class="text-2xl font-bold text-gray-800 mb-6">Coordonnées</h2>
+              <div class="space-y-4">
+                <p class="flex items-start">
+                  <i class="fas fa-map-marker-alt text-green-600 mr-3 mt-1"></i>
+                  <span>Nkayi, Département de la Bouenza, République du Congo</span>
+                </p>
+                <p class="flex items-center">
+                  <i class="fas fa-phone text-green-600 mr-3"></i>
+                  <span>+242 06 XXX XX XX</span>
+                </p>
+                <p class="flex items-center">
+                  <i class="fas fa-envelope text-green-600 mr-3"></i>
+                  <span>contact@microhorizon.org</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Horaires -->
+            <div class="bg-white p-8 rounded-2xl shadow-xl">
+              <h2 class="text-2xl font-bold text-gray-800 mb-6">Horaires d'ouverture</h2>
+              <div class="space-y-3">
+                <div class="flex justify-between">
+                  <span class="text-gray-700">Lundi - Vendredi</span>
+                  <span class="font-medium text-green-600">8h00 - 17h00</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-700">Samedi</span>
+                  <span class="font-medium text-green-600">9h00 - 13h00</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-700">Dimanche</span>
+                  <span class="font-medium text-red-600">Fermé</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bg text-white pt-12 pb-6">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between gap-8">
+          <!-- Colonne 1 Logo Micro Horizon-->
+          <div class="md:w-1/3">
+            <div class="flex items-center space-x-3 mb-6">
+              <div
+                class="w-12 h-12 rounded-full bg-gradient-to-r from-green-600 to-blue-600 flex items-center justify-center"
+              >
+                <i class="fas fa-seedling text-white text-2xl"></i>
+              </div>
+              <div>
+                <h2 class="text-2xl font-bold">MICRO HORIZON</h2>
+                <p class="text-green-400 font-medium">Graine de l'Espoir</p>
+              </div>
+            </div>
+            <p class="text-gray-300 mb-6">
+              Former les jeunes congolais aux <br />
+              compétences numériques pour <br />
+              construire un avenir meilleur.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-600 transition"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-400 transition"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 transition"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-500 transition"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 transition"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Liens rapides -->
+          <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-3 gap-8">
+            <div>
+              <h3 class="text-xl font-bold mb-8 border-l-4 border-mh-gold pl-4">
+                Liens rapides
+              </h3>
+              <ul class="space-y-3">
+                <li>
+                  <a
+                    href="apropos.html"
+                    class="text-gray-300 hover:text-mh-gold transition duration-300"
+                  >
+                    <i
+                      class="fas fa-chevron-right text-sm mr-3 text-mh-gold"
+                    ></i
+                    >À propos</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./nos-projets.html"
+                    class="text-gray-300 hover:text-mh-gold transition duration-300"
+                    ><i
+                      class="fas fa-chevron-right text-sm mr-3 text-mh-gold"
+                    ></i
+                    >Nos projets</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./centre-formation.html"
+                    class="text-gray-300 hover:text-mh-gold transition duration-300"
+                    ><i
+                      class="fas fa-chevron-right text-sm mr-3 text-mh-gold"
+                    ></i
+                    >Centre de formation</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./actualites.html"
+                    class="text-gray-300 hover:text-mh-gold transition duration-300"
+                    ><i
+                      class="fas fa-chevron-right text-sm mr-3 text-mh-gold"
+                    ></i
+                    >Actualités</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3
+                class="text-xl font-bold mb-8 border-l-4 border-mh-green pl-4"
+              >
+                Nos projets
+              </h3>
+              <ul class="space-y-3">
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-300 hover:text-green-400 transition"
+                  >
+                    <i class="fas fa-seedling text-sm mr-3 text-mh-green"></i
+                    >MBUMA YA KIVUVU</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-300 hover:text-green-400 transition"
+                  >
+                    <i class="fas fa-laptop-code text-sm mr-3 text-mh-green"></i
+                    >Formation TIC Jeunes</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-300 hover:text-green-400 transition"
+                  >
+                    <i class="fas fa-briefcase text-sm mr-3 text-mh-green"></i
+                    >Entrepreneuriat</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-300 hover:text-green-400 transition"
+                  >
+                    <i
+                      class="fas fa-user-graduate text-sm mr-3 text-mh-green"
+                    ></i>
+                    Un jeune, un emploi</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold mb-8 border-l-4 border-mh-blue pl-4">
+                Contact
+              </h3>
+              <ul class="space-y-5">
+                <li class="flex items-start whitespace-nowrap">
+                  <div
+                    class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="fas fa-map-marker-alt text-mh-gold"></i>
+                  </div>
+                  <div>
+                    <span class="text-gray-300"
+                      >Nkayi, Département de la Bouenza<br />République du
+                      Congo</span
+                    >
+                  </div>
+                </li>
+                <li class="flex items-center">
+                  <div
+                    class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="fas fa-envelope text-mh-gold"></i>
+                  </div>
+                  <span class="text-gray-300">contact@microhorizon.org</span>
+                </li>
+                <li class="flex items-center">
+                  <div
+                    class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="fas fa-phone text-mh-gold"></i>
+                  </div>
+                  <span class="text-gray-300">+242 06 XXXXX</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-700 mt-8 pt-6 text-center">
+          <p class="text-gray-400">
+            © 2025 MICRO HORIZON. Tous droits réservés. | Graine de l'Espoir -
+            MBUMA YA KIVUVU
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script pour menu mobile -->
+    <script>
+      // Menu mobile toggle
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          const mobileMenu = document.getElementById("mobile-menu");
+          mobileMenu.classList.toggle("hidden");
+
+          // Changer l'icône
+          const icon = this.querySelector("i");
+          if (icon.classList.contains("fa-bars")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times");
+          } else {
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+          }
+        });
+
+      // Gestion du formulaire
+      document.getElementById("contactForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        alert("Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.");
+        this.reset();
+      });
+    </script>
+  </body>
 </html>
