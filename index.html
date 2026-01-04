@@ -1,21 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact - MICRO HORIZON</title>
-    <!-- Tailwind CSS -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centre de Formation | MICRO HORIZON</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome pour icônes -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
       tailwind.config = {
         theme: {
@@ -33,325 +24,442 @@
       };
     </script>
     <style>
-      :root {
-        --primary-white: #ffffff;
-        --primary-blue: #1e40af;
-        --secondary-blue: #3b82f6;
-        --primary-green: #2e8b57;
-        --secondary-green: #059669;
-        --primary-gold: #f59e0b;
-        --secondary-gold: #d97706;
-      }
-
       body {
         font-family: "Roboto", sans-serif;
-        color: #333;
       }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
+      
+      h1, h2, h3, h4, h5, h6 {
         font-family: "Poppins", sans-serif;
       }
 
       .hero-bg {
         background: linear-gradient(
-            rgba(30, 58, 138, 0.85),
-            rgba(46, 139, 87, 0.9)
+            rgba(30, 58, 138, 0.9),
+            rgba(16, 185, 129, 0.85)
           ),
-          url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+          url("https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80");
         background-size: cover;
         background-position: center;
       }
 
-      .text-gradient {
-        background: linear-gradient(90deg, #d4af37 0%, #f7ef8a 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .section-bg {
-        background-color: #f8fafc;
-      }
-
-      .card-hover:hover {
-        transform: translateY(-5px);
-        transition: all 0.3s ease;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      }
-
-      .btn-primary {
-        background-color: var(--primary-green);
-        color: white;
-        padding: 12px 24px;
-        border-radius: 4px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-      }
-
-      .btn-primary:hover {
-        background-color: #1e6b47;
-        transform: translateY(-2px);
-      }
-
-      .btn-secondary {
-        background-color: var(--primary-blue);
-        color: white;
-        padding: 12px 24px;
-        border-radius: 4px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-      }
-
-      .btn-secondary:hover {
-        background-color: #152c5b;
-        transform: translateY(-2px);
-      }
-
       .gold-border {
-        border-color: var(--primary-gold);
-      }
-
-      .stat-card {
-        background: linear-gradient(
-          135deg,
-          var(--primary-blue),
-          var(--primary-green)
-        );
-        color: white;
-        border-radius: 10px;
-        padding: 20px;
-        text-align: center;
+        border-color: #F59E0B;
       }
 
       .footer-bg {
         background-color: #0f172a;
       }
 
-      .logo-img {
-        max-width: 120px;
-        max-height: 60px;
-        object-fit: contain;
+      .module-card {
+        transition: all 0.3s ease;
+      }
+
+      .module-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+      }
+
+      @media (max-width: 768px) {
+        .stats-grid {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
-  </head>
-  <body class="bg-gray-50">
-    <!-- Header / Navigation -->
-    <header
-      class="sticky top-0 z-50 bg-white bg-white shadow-lg border-b gold-border"
-    >
-      <div
-        class="container mx-auto px-4 py-4 flex justify-between gap-5 items-center"
-      >
-        <!-- Logo -->
-        <a href="contact.html">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-lg border-b gold-border">
+      <div class="container mx-auto px-4 py-4 flex justify-between gap-5 items-center">
+        <a href="index.html">
           <div class="flex items-center space-x-2 whitespace-nowrap">
-            <div
-              class="w-10 h-10 rounded-full bg-gradient-to-r from-green-600 to-blue-600 flex items-center justify-center"
-            >
+            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-green-600 to-blue-600 flex items-center justify-center">
               <i class="fas fa-seedling text-white text-xl"></i>
             </div>
             <div>
               <h1 class="text-xl font-bold text-blue-900">MICRO HORIZON</h1>
-              <p class="text-xs font-semibold text-green-700">
-                Graine de l'Espoir
-              </p>
+              <p class="text-xs font-semibold text-green-700">Graine de l'Espoir</p>
             </div>
           </div>
         </a>
 
-        <!-- Menu Desktop -->
         <nav class="hidden md:flex space-x-8 whitespace-nowrap">
-          <a
-            href="index.html"
-            class="text-green-600 font-medium border-b-2 border-green-600 pb-1"
-            >Accueil</a
-          >
-          <a
-            href="./apropos.html"
-            class="text-gray-600 font-medium hover:text-green-600 transition"
-            >À propos</a
-          >
-          <a
-            href="./nos-domaines.html"
-            class="text-gray-600 font-medium hover:text-green-600 transition"
-            >Nos domaines</a
-          >
-          <a
-            href="./nos-projets.html"
-            class="text-gray-600 font-medium hover:text-green-600 transition"
-            >Nos projets</a
-          >
-          <a
-            href="./centre-formation.html"
-            class="text-gray-600 font-medium hover:text-green-600 transition"
-            >Centre de formation</a
-          >
-          <a
-            href="./actualites.html"
-            class="text-gray-600 font-medium hover:text-green-600 transition"
-            >Actualités</a
-          >
-          <a
-            href="./partenaires.html"
-            class="text-gray-600 font-medium hover:text-green-600 transition"
-            >Partenaires</a
-          >
-          <a
-            href="#"
-            class="text-gray-600 font-medium hover:text-green-600 transition"
-            >Contact</a
-          >
+          <a href="index.html" class="text-gray-600 font-medium hover:text-green-600 transition">Accueil</a>
+          <a href="./apropos.html" class="text-gray-600 font-medium hover:text-green-600 transition">À propos</a>
+          <a href="./nos-domaines.html" class="text-gray-600 font-medium hover:text-green-600 transition">Nos domaines</a>
+          <a href="./nos-projets.html" class="text-gray-600 font-medium hover:text-green-600 transition">Nos projets</a>
+          <a href="./centre-formation.html" class="text-green-600 font-medium border-b-2 border-green-600 pb-1">Centre de formation</a>
+          <a href="./actualites.html" class="text-gray-600 font-medium hover:text-green-600 transition">Actualités</a>
+          <a href="./partenaires.html" class="text-gray-600 font-medium hover:text-green-600 transition">Partenaires</a>
+          <a href="./contact.html" class="text-gray-600 font-medium hover:text-green-600 transition">Contact</a>
         </nav>
 
-        <!-- Menu Mobile Button -->
-        <button
-          id="menu-toggle"
-          class="md:hidden text-gray-700 text-xl hover:text-yellow-500 transition"
-        >
+        <button id="menu-toggle" class="md:hidden text-gray-700 text-xl hover:text-yellow-500 transition">
           <i class="fas fa-bars text-2xl"></i>
         </button>
       </div>
 
-      <!-- Mobile Menu -->
-      <div
-        id="mobile-menu"
-        class="hidden md:hidden bg-white py-4 px-4 shadow-lg"
-      >
+      <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 shadow-lg">
         <div class="flex flex-col space-y-4">
-          <a
-            href="index.html"
-            class="text-green-600 font-medium border-l-4 border-green-600 pl-3"
-            >Accueil</a
-          >
-          <a
-            href="./apropos.html"
-            class="text-gray-600 font-medium hover:text-green-600 transition"
-            >À propos</a
-          >
-          <a
-            href="./nos-domaines.html"
-            class="text-gray-600 font-medium hover:text-green-600 transition"
-            >Nos domaines</a
-          >
-          <a
-            href="./nos-projets.html"
-            class="text-gray-600 font-medium hover:text-green-600 transition"
-            >Nos projets</a
-          >
-          <a
-            href="#"
-            class="text-gray-600 font-medium hover:text-green-600 transition"
-            >Centre de formation</a
-          >
-          <a
-            href="./actualites.html"
-            class="text-gray-600 font-medium hover:text-green-600 transition"
-            >Actualités</a
-          >
-          <a
-            href="./partenaires.html"
-            class="text-gray-600 font-medium hover:text-green-600 transition"
-            >Partenaires</a
-          >
-          <a
-            href="#"
-            class="text-gray-600 font-medium hover:text-green-600 transition"
-            >Contact</a
-          >
-          <a href="#" class="btn-primary inline-block text-center"
-            >Faire un don</a
-          >
+          <a href="./index.html" class="text-gray-600 font-medium hover:text-green-600 transition">Accueil</a>
+          <a href="./apropos.html" class="text-gray-600 font-medium hover:text-green-600 transition">À propos</a>
+          <a href="./nos-domaines.html" class="text-gray-600 font-medium hover:text-green-600 transition">Nos domaines</a>
+          <a href="./nos-projets.html" class="text-gray-600 font-medium hover:text-green-600 transition">Nos projets</a>
+          <a href="./centre-formation.html" class="text-green-600 font-medium border-l-4 border-green-600 pl-3">Centre de formation</a>
+          <a href="./actualites.html" class="text-gray-600 font-medium hover:text-green-600 transition">Actualités</a>
+          <a href="./partenaires.html" class="text-gray-600 font-medium hover:text-green-600 transition">Partenaires</a>
+          <a href="./contact.html" class="text-gray-600 font-medium hover:text-green-600 transition">Contact</a>
+          <a href="#" class="bg-green-600 text-white px-6 py-3 rounded-lg text-center hover:bg-green-700 transition">Faire un don</a>
         </div>
       </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-bg text-white py-16 md:py-24">
-      <div class="container mx-auto px-4">
-         <h1 class="text-4xl font-bold text-center mb-12">Contactez-nous</h1>
-         <p class="text-center text-xl max-w-3xl mx-auto">
-           Nous sommes à votre écoute pour toute question ou demande d'information
-         </p>
+    <section class="hero-bg text-white py-20 md:py-32">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">Centre de Formation MICRO HORIZON</h1>
+        <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Former la nouvelle génération aux compétences du 21ème siècle</p>
+        <a href="#inscription" class="inline-block bg-mh-gold text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-mh-dark-gold transition">
+          <i class="fas fa-edit mr-2"></i>S'inscrire maintenant
+        </a>
       </div>
     </section>
 
-    <!-- Section Contact -->
-    <section class="py-16">
-      <div class="container mx-auto px-4">
-        <div class="grid lg:grid-cols-2 gap-12">
-          <!-- Formulaire -->
-          <div class="bg-white p-8 rounded-2xl shadow-xl">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6">Envoyez-nous un message</h2>
-            <form id="contactForm">
-              <div class="mb-4">
-                <label class="block text-gray-700 mb-2">Nom complet</label>
-                <input type="text" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
-              </div>
-              <div class="mb-4">
-                <label class="block text-gray-700 mb-2">Email</label>
-                <input type="email" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
-              </div>
-              <div class="mb-4">
-                <label class="block text-gray-700 mb-2">Sujet</label>
-                <input type="text" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
-              </div>
-              <div class="mb-6">
-                <label class="block text-gray-700 mb-2">Message</label>
-                <textarea rows="5" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"></textarea>
-              </div>
-              <button type="submit" class="w-full bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 transition">
-                <i class="fas fa-paper-plane mr-2"></i> Envoyer
-              </button>
-            </form>
+    <main class="container mx-auto px-4 py-16">
+        <!-- Statistiques -->
+        <section class="mb-20">
+          <div class="stats-grid">
+            <div class="bg-gradient-to-br from-blue-600 to-blue-800 text-white p-8 rounded-2xl text-center shadow-xl">
+              <i class="fas fa-users text-5xl mb-4"></i>
+              <p class="text-4xl font-bold mb-2">500+</p>
+              <p class="text-lg">Bénéficiaires formés</p>
+            </div>
+            <div class="bg-gradient-to-br from-green-600 to-green-800 text-white p-8 rounded-2xl text-center shadow-xl">
+              <i class="fas fa-chalkboard-teacher text-5xl mb-4"></i>
+              <p class="text-4xl font-bold mb-2">15+</p>
+              <p class="text-lg">Modules de formation</p>
+            </div>
+            <div class="bg-gradient-to-br from-yellow-500 to-orange-600 text-white p-8 rounded-2xl text-center shadow-xl">
+              <i class="fas fa-certificate text-5xl mb-4"></i>
+              <p class="text-4xl font-bold mb-2">85%</p>
+              <p class="text-lg">Taux de réussite</p>
+            </div>
+            <div class="bg-gradient-to-br from-purple-600 to-pink-600 text-white p-8 rounded-2xl text-center shadow-xl">
+              <i class="fas fa-briefcase text-5xl mb-4"></i>
+              <p class="text-4xl font-bold mb-2">60%</p>
+              <p class="text-lg">Insertion professionnelle</p>
+            </div>
           </div>
+        </section>
 
-          <!-- Infos & Carte -->
-          <div>
-            <div class="bg-white p-8 rounded-2xl shadow-xl mb-8">
-              <h2 class="text-2xl font-bold text-gray-800 mb-6">Coordonnées</h2>
-              <div class="space-y-4">
-                <p class="flex items-start">
-                  <i class="fas fa-map-marker-alt text-green-600 mr-3 mt-1"></i>
-                  <span>Nkayi, Département de la Bouenza, République du Congo</span>
-                </p>
-                <p class="flex items-center">
-                  <i class="fas fa-phone text-green-600 mr-3"></i>
-                  <span>+242 06 XXX XX XX</span>
-                </p>
-                <p class="flex items-center">
-                  <i class="fas fa-envelope text-green-600 mr-3"></i>
-                  <span>contact@microhorizon.org</span>
-                </p>
+        <!-- Présentation -->
+        <section class="bg-white rounded-2xl shadow-2xl p-8 md:p-12 mb-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Notre Centre</h2>
+                <p class="text-gray-700 text-lg mb-6">Le Centre de Formation MICRO HORIZON est un espace moderne et équipé, dédié à l'apprentissage des compétences numériques et entrepreneuriales. Nous offrons un environnement propice à l'épanouissement professionnel des jeunes et des femmes de la région.</p>
+                <div class="space-y-4">
+                  <div class="flex items-start">
+                    <i class="fas fa-check-circle text-green-600 text-2xl mr-4 mt-1"></i>
+                    <div>
+                      <h4 class="font-semibold text-lg text-gray-800">Équipements modernes</h4>
+                      <p class="text-gray-600">Ordinateurs récents, connexion internet haut débit</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-check-circle text-green-600 text-2xl mr-4 mt-1"></i>
+                    <div>
+                      <h4 class="font-semibold text-lg text-gray-800">Formateurs qualifiés</h4>
+                      <p class="text-gray-600">Experts passionnés et expérimentés</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-check-circle text-green-600 text-2xl mr-4 mt-1"></i>
+                    <div>
+                      <h4 class="font-semibold text-lg text-gray-800">Certifications reconnues</h4>
+                      <p class="text-gray-600">Attestations valorisables sur le marché</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Centre de Formation" class="w-full rounded-xl shadow-2xl">
               </div>
             </div>
+        </section>
 
-            <!-- Horaires -->
+        <!-- Modules de formation -->
+        <section class="mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 text-center">Nos Modules de Formation</h2>
+            <p class="text-gray-600 text-center text-lg mb-12 max-w-3xl mx-auto">Des formations pratiques et adaptées aux besoins du marché de l'emploi</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="module-card bg-white p-8 rounded-2xl shadow-xl border-t-4 border-blue-600">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                      <i class="fas fa-laptop-code text-3xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Informatique de Base</h3>
+                    <p class="text-gray-600 mb-4">Maîtrisez les outils essentiels du bureau moderne</p>
+                    <ul class="space-y-2 text-gray-700">
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>Microsoft Word</li>
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>Microsoft Excel</li>
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>PowerPoint</li>
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>Navigation Internet</li>
+                    </ul>
+                    <div class="mt-6 pt-6 border-t">
+                      <p class="text-sm text-gray-500"><i class="fas fa-clock mr-2"></i>Durée: 3 mois</p>
+                    </div>
+                </div>
+
+                <div class="module-card bg-white p-8 rounded-2xl shadow-xl border-t-4 border-green-600">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                      <i class="fas fa-code text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Développement Web</h3>
+                    <p class="text-gray-600 mb-4">Créez vos propres sites web professionnels</p>
+                    <ul class="space-y-2 text-gray-700">
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>HTML5 & CSS3</li>
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>JavaScript</li>
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>WordPress</li>
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>Responsive Design</li>
+                    </ul>
+                    <div class="mt-6 pt-6 border-t">
+                      <p class="text-sm text-gray-500"><i class="fas fa-clock mr-2"></i>Durée: 6 mois</p>
+                    </div>
+                </div>
+
+                <div class="module-card bg-white p-8 rounded-2xl shadow-xl border-t-4 border-purple-600">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                      <i class="fas fa-chart-line text-3xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Entrepreneuriat</h3>
+                    <p class="text-gray-600 mb-4">Lancez et développez votre entreprise</p>
+                    <ul class="space-y-2 text-gray-700">
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>Business Plan</li>
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>Marketing Digital</li>
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>Gestion Financière</li>
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>Leadership</li>
+                    </ul>
+                    <div class="mt-6 pt-6 border-t">
+                      <p class="text-sm text-gray-500"><i class="fas fa-clock mr-2"></i>Durée: 4 mois</p>
+                    </div>
+                </div>
+
+                <div class="module-card bg-white p-8 rounded-2xl shadow-xl border-t-4 border-yellow-600">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
+                      <i class="fas fa-camera text-3xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Design Graphique</h3>
+                    <p class="text-gray-600 mb-4">Créez des visuels percutants et professionnels</p>
+                    <ul class="space-y-2 text-gray-700">
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>Adobe Photoshop</li>
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>Canva Pro</li>
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>Identité visuelle</li>
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>Réseaux sociaux</li>
+                    </ul>
+                    <div class="mt-6 pt-6 border-t">
+                      <p class="text-sm text-gray-500"><i class="fas fa-clock mr-2"></i>Durée: 4 mois</p>
+                    </div>
+                </div>
+
+                <div class="module-card bg-white p-8 rounded-2xl shadow-xl border-t-4 border-red-600">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
+                      <i class="fas fa-mobile-alt text-3xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Réseaux Sociaux</h3>
+                    <p class="text-gray-600 mb-4">Devenez expert en communication digitale</p>
+                    <ul class="space-y-2 text-gray-700">
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>Community Management</li>
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>Facebook & Instagram</li>
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>Stratégie de contenu</li>
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>Publicité en ligne</li>
+                    </ul>
+                    <div class="mt-6 pt-6 border-t">
+                      <p class="text-sm text-gray-500"><i class="fas fa-clock mr-2"></i>Durée: 3 mois</p>
+                    </div>
+                </div>
+
+                <div class="module-card bg-white p-8 rounded-2xl shadow-xl border-t-4 border-indigo-600">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                      <i class="fas fa-database text-3xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Analyse de Données</h3>
+                    <p class="text-gray-600 mb-4">Transformez les données en décisions stratégiques</p>
+                    <ul class="space-y-2 text-gray-700">
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>Excel Avancé</li>
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>Power BI</li>
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>Statistiques</li>
+                      <li><i class="fas fa-check text-green-600 mr-2"></i>Visualisation</li>
+                    </ul>
+                    <div class="mt-6 pt-6 border-t">
+                      <p class="text-sm text-gray-500"><i class="fas fa-clock mr-2"></i>Durée: 5 mois</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Processus d'inscription -->
+        <section class="mb-20">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12 text-center">Processus d'Inscription</h2>
+          <div class="grid md:grid-cols-4 gap-8">
+            <div class="text-center">
+              <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-3xl font-bold">1</div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Dépôt du dossier</h3>
+              <p class="text-gray-600">Soumettez votre candidature avec les pièces requises</p>
+            </div>
+            <div class="text-center">
+              <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-3xl font-bold">2</div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Sélection</h3>
+              <p class="text-gray-600">Étude de votre dossier par notre équipe</p>
+            </div>
+            <div class="text-center">
+              <div class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-3xl font-bold">3</div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Entretien</h3>
+              <p class="text-gray-600">Rencontre avec nos formateurs</p>
+            </div>
+            <div class="text-center">
+              <div class="w-20 h-20 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-3xl font-bold">4</div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Formation</h3>
+              <p class="text-gray-600">Démarrez votre parcours de formation</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Modalités d'inscription -->
+        <section id="inscription" class="bg-gradient-to-br from-green-50 to-blue-50 p-8 md:p-12 rounded-2xl shadow-xl mb-20">
+            <div class="max-w-4xl mx-auto">
+              <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">Modalités d'Inscription</h2>
+              
+              <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                  <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-user-check text-green-600 mr-3"></i>Critères d'éligibilité
+                  </h3>
+                  <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start">
+                      <i class="fas fa-check-circle text-green-600 mr-3 mt-1"></i>
+                      <span>Âge entre 18 et 35 ans</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-check-circle text-green-600 mr-3 mt-1"></i>
+                      <span>Motivation et engagement</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-check-circle text-green-600 mr-3 mt-1"></i>
+                      <span>Disponibilité pour suivre la formation</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                  <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-file-alt text-blue-600 mr-3"></i>Pièces requises
+                  </h3>
+                  <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start">
+                      <i class="fas fa-check-circle text-blue-600 mr-3 mt-1"></i>
+                      <span>Carte Nationale d'Identité (CNI)</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-check-circle text-blue-600 mr-3 mt-1"></i>
+                      <span>Diplôme ou attestation de niveau</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-check-circle text-blue-600 mr-3 mt-1"></i>
+                      <span>2 photos d'identité récentes</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-check-circle text-blue-600 mr-3 mt-1"></i>
+                      <span>Lettre de motivation</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-white p-6 rounded-xl shadow-lg mb-8">
+                <div class="flex items-start">
+                  <i class="fas fa-gift text-4xl text-yellow-600 mr-4"></i>
+                  <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Formation Gratuite</h3>
+                    <p class="text-gray-700">La formation est entièrement gratuite pour les bénéficiaires sélectionnés. MICRO HORIZON prend en charge tous les frais de formation, les supports de cours et délivre une attestation officielle en fin de parcours.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-center">
+                <a href="contact.html" class="inline-block bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition shadow-lg">
+                  <i class="fas fa-edit mr-2"></i>Demander un dossier d'inscription
+                </a>
+                <p class="text-gray-600 mt-4">Ou appelez-nous au <strong>+242 06 XXX XX XX</strong></p>
+              </div>
+            </div>
+        </section>
+
+        <!-- Témoignages -->
+        <section class="mb-20">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12 text-center">Témoignages de nos apprenants</h2>
+          <div class="grid md:grid-cols-3 gap-8">
             <div class="bg-white p-8 rounded-2xl shadow-xl">
-              <h2 class="text-2xl font-bold text-gray-800 mb-6">Horaires d'ouverture</h2>
-              <div class="space-y-3">
-                <div class="flex justify-between">
-                  <span class="text-gray-700">Lundi - Vendredi</span>
-                  <span class="font-medium text-green-600">8h00 - 17h00</span>
+              <div class="flex items-center mb-4">
+                <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">JM</div>
+                <div>
+                  <h4 class="font-bold text-gray-800">Jean Makaya</h4>
+                  <p class="text-gray-600 text-sm">Développement Web</p>
                 </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-700">Samedi</span>
-                  <span class="font-medium text-green-600">9h00 - 13h00</span>
+              </div>
+              <p class="text-gray-700 italic">"Grâce à MICRO HORIZON, j'ai pu créer mon premier site web et décrocher un emploi dans une agence digitale. La formation était très pratique et les formateurs excellents."</p>
+              <div class="flex text-yellow-400 mt-4">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-xl">
+              <div class="flex items-center mb-4">
+                <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">DN</div>
+                <div>
+                  <h4 class="font-bold text-gray-800">Diane Nsoko</h4>
+                  <p class="text-gray-600 text-sm">Entrepreneuriat</p>
                 </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-700">Dimanche</span>
-                  <span class="font-medium text-red-600">Fermé</span>
+              </div>
+              <p class="text-gray-700 italic">"J'ai appris à élaborer mon business plan et à gérer ma petite entreprise. Aujourd'hui, je gère une boutique en ligne qui génère des revenus réguliers."</p>
+              <div class="flex text-yellow-400 mt-4">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-xl">
+              <div class="flex items-center mb-4">
+                <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">PK</div>
+                <div>
+                  <h4 class="font-bold text-gray-800">Paul Kimbembe</h4>
+                  <p class="text-gray-600 text-sm">Design Graphique</p>
                 </div>
+              </div>
+              <p class="text-gray-700 italic">"Les cours de design m'ont permis de développer ma créativité. Je travaille maintenant en freelance et je réalise des visuels pour plusieurs entreprises locales."</p>
+              <div class="flex text-yellow-400 mt-4">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer-bg text-white pt-12 pb-6">
@@ -360,9 +468,7 @@
           <!-- Colonne 1 Logo Micro Horizon-->
           <div class="md:w-1/3">
             <div class="flex items-center space-x-3 mb-6">
-              <div
-                class="w-12 h-12 rounded-full bg-gradient-to-r from-green-600 to-blue-600 flex items-center justify-center"
-              >
+              <div class="w-12 h-12 rounded-full bg-gradient-to-r from-green-600 to-blue-600 flex items-center justify-center">
                 <i class="fas fa-seedling text-white text-2xl"></i>
               </div>
               <div>
@@ -376,34 +482,19 @@
               construire un avenir meilleur.
             </p>
             <div class="flex space-x-4">
-              <a
-                href="#"
-                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-600 transition"
-              >
+              <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-600 transition">
                 <i class="fab fa-facebook-f"></i>
               </a>
-              <a
-                href="#"
-                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-400 transition"
-              >
+              <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-400 transition">
                 <i class="fab fa-twitter"></i>
               </a>
-              <a
-                href="#"
-                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 transition"
-              >
+              <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 transition">
                 <i class="fab fa-instagram"></i>
               </a>
-              <a
-                href="#"
-                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-500 transition"
-              >
+              <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-500 transition">
                 <i class="fab fa-whatsapp"></i>
               </a>
-              <a
-                href="#"
-                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 transition"
-              >
+              <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 transition">
                 <i class="fab fa-youtube"></i>
               </a>
             </div>
@@ -417,93 +508,52 @@
               </h3>
               <ul class="space-y-3">
                 <li>
-                  <a
-                    href="apropos.html"
-                    class="text-gray-300 hover:text-mh-gold transition duration-300"
-                  >
-                    <i
-                      class="fas fa-chevron-right text-sm mr-3 text-mh-gold"
-                    ></i
-                    >À propos</a
-                  >
+                  <a href="apropos.html" class="text-gray-300 hover:text-mh-gold transition duration-300">
+                    <i class="fas fa-chevron-right text-sm mr-3 text-mh-gold"></i>À propos
+                  </a>
                 </li>
                 <li>
-                  <a
-                    href="./nos-projets.html"
-                    class="text-gray-300 hover:text-mh-gold transition duration-300"
-                    ><i
-                      class="fas fa-chevron-right text-sm mr-3 text-mh-gold"
-                    ></i
-                    >Nos projets</a
-                  >
+                  <a href="./nos-projets.html" class="text-gray-300 hover:text-mh-gold transition duration-300">
+                    <i class="fas fa-chevron-right text-sm mr-3 text-mh-gold"></i>Nos projets
+                  </a>
                 </li>
                 <li>
-                  <a
-                    href="./centre-formation.html"
-                    class="text-gray-300 hover:text-mh-gold transition duration-300"
-                    ><i
-                      class="fas fa-chevron-right text-sm mr-3 text-mh-gold"
-                    ></i
-                    >Centre de formation</a
-                  >
+                  <a href="./centre-formation.html" class="text-gray-300 hover:text-mh-gold transition duration-300">
+                    <i class="fas fa-chevron-right text-sm mr-3 text-mh-gold"></i>Centre de formation
+                  </a>
                 </li>
                 <li>
-                  <a
-                    href="./actualites.html"
-                    class="text-gray-300 hover:text-mh-gold transition duration-300"
-                    ><i
-                      class="fas fa-chevron-right text-sm mr-3 text-mh-gold"
-                    ></i
-                    >Actualités</a
-                  >
+                  <a href="./actualites.html" class="text-gray-300 hover:text-mh-gold transition duration-300">
+                    <i class="fas fa-chevron-right text-sm mr-3 text-mh-gold"></i>Actualités
+                  </a>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h3
-                class="text-xl font-bold mb-8 border-l-4 border-mh-green pl-4"
-              >
+              <h3 class="text-xl font-bold mb-8 border-l-4 border-mh-green pl-4">
                 Nos projets
               </h3>
               <ul class="space-y-3">
                 <li>
-                  <a
-                    href="#"
-                    class="text-gray-300 hover:text-green-400 transition"
-                  >
-                    <i class="fas fa-seedling text-sm mr-3 text-mh-green"></i
-                    >MBUMA YA KIVUVU</a
-                  >
+                  <a href="#" class="text-gray-300 hover:text-green-400 transition">
+                    <i class="fas fa-seedling text-sm mr-3 text-mh-green"></i>MBUMA YA KIVUVU
+                  </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    class="text-gray-300 hover:text-green-400 transition"
-                  >
-                    <i class="fas fa-laptop-code text-sm mr-3 text-mh-green"></i
-                    >Formation TIC Jeunes</a
-                  >
+                  <a href="#" class="text-gray-300 hover:text-green-400 transition">
+                    <i class="fas fa-laptop-code text-sm mr-3 text-mh-green"></i>Formation TIC Jeunes
+                  </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    class="text-gray-300 hover:text-green-400 transition"
-                  >
-                    <i class="fas fa-briefcase text-sm mr-3 text-mh-green"></i
-                    >Entrepreneuriat</a
-                  >
+                  <a href="#" class="text-gray-300 hover:text-green-400 transition">
+                    <i class="fas fa-briefcase text-sm mr-3 text-mh-green"></i>Entrepreneuriat
+                  </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    class="text-gray-300 hover:text-green-400 transition"
-                  >
-                    <i
-                      class="fas fa-user-graduate text-sm mr-3 text-mh-green"
-                    ></i>
-                    Un jeune, un emploi</a
-                  >
+                  <a href="#" class="text-gray-300 hover:text-green-400 transition">
+                    <i class="fas fa-user-graduate text-sm mr-3 text-mh-green"></i>Un jeune, un emploi
+                  </a>
                 </li>
               </ul>
             </div>
@@ -514,30 +564,21 @@
               </h3>
               <ul class="space-y-5">
                 <li class="flex items-start whitespace-nowrap">
-                  <div
-                    class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center mr-4 flex-shrink-0"
-                  >
+                  <div class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center mr-4 flex-shrink-0">
                     <i class="fas fa-map-marker-alt text-mh-gold"></i>
                   </div>
                   <div>
-                    <span class="text-gray-300"
-                      >Nkayi, Département de la Bouenza<br />République du
-                      Congo</span
-                    >
+                    <span class="text-gray-300">Nkayi, Département de la Bouenza<br />République du Congo</span>
                   </div>
                 </li>
                 <li class="flex items-center">
-                  <div
-                    class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center mr-4 flex-shrink-0"
-                  >
+                  <div class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center mr-4 flex-shrink-0">
                     <i class="fas fa-envelope text-mh-gold"></i>
                   </div>
                   <span class="text-gray-300">contact@microhorizon.org</span>
                 </li>
                 <li class="flex items-center">
-                  <div
-                    class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center mr-4 flex-shrink-0"
-                  >
+                  <div class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center mr-4 flex-shrink-0">
                     <i class="fas fa-phone text-mh-gold"></i>
                   </div>
                   <span class="text-gray-300">+242 06 XXXXX</span>
@@ -549,8 +590,7 @@
 
         <div class="border-t border-gray-700 mt-8 pt-6 text-center">
           <p class="text-gray-400">
-            © 2025 MICRO HORIZON. Tous droits réservés. | Graine de l'Espoir -
-            MBUMA YA KIVUVU
+            © 2025 MICRO HORIZON. Tous droits réservés. | Graine de l'Espoir - MBUMA YA KIVUVU
           </p>
         </div>
       </div>
@@ -558,30 +598,30 @@
 
     <!-- Script pour menu mobile -->
     <script>
-      // Menu mobile toggle
-      document
-        .getElementById("menu-toggle")
-        .addEventListener("click", function () {
-          const mobileMenu = document.getElementById("mobile-menu");
-          mobileMenu.classList.toggle("hidden");
+      document.getElementById("menu-toggle").addEventListener("click", function () {
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenu.classList.toggle("hidden");
 
-          // Changer l'icône
-          const icon = this.querySelector("i");
-          if (icon.classList.contains("fa-bars")) {
-            icon.classList.remove("fa-bars");
-            icon.classList.add("fa-times");
-          } else {
-            icon.classList.remove("fa-times");
-            icon.classList.add("fa-bars");
+        const icon = this.querySelector("i");
+        if (icon.classList.contains("fa-bars")) {
+          icon.classList.remove("fa-bars");
+          icon.classList.add("fa-times");
+        } else {
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        }
+      });
+
+      // Smooth scroll pour les ancres
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         });
-
-      // Gestion du formulaire
-      document.getElementById("contactForm").addEventListener("submit", function(e) {
-        e.preventDefault();
-        alert("Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.");
-        this.reset();
       });
     </script>
-  </body>
+</body>
 </html>
